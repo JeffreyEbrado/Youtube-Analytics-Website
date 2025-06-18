@@ -92,7 +92,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 5px 5px;
             background-color: #000;
             position: sticky;
             top: 0;
@@ -109,8 +109,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            font-size: 14px;
+            padding: 0 5px;
+            font-size: 10px;
             font-weight: 600;
             z-index: 101;
         }
@@ -142,19 +142,19 @@
         }
 
         .video-section {
-            padding: 20px;
+            padding: 7px;
         }
 
         .video-container {
             display: flex;
             gap: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 5px;
             align-items: center;
         }
 
         .video-thumbnail {
-    width: 100px;
-    height: 160px;
+    width: 80px;
+    height: 100px;
     border-radius: 8px;
     background: rgb(0, 0, 0);
     position: relative;
@@ -219,7 +219,7 @@
         }
 
         .video-title {
-            font-size: 30px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 1;
             margin-bottom: 8px;
@@ -227,11 +227,12 @@
 
         .video-meta {
             color: #aaa;
-            font-size: 14px;
+            font-size: 10px;
         }
 
         .stats-main {
             margin-bottom: 5px;
+            height: 60px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -248,8 +249,8 @@
 
 
         .mini-chart {
-            width: 140px;
-            height: 60px;
+            width: 180px;
+            height: 30px;
             margin-left: 20px;
             margin-bottom: 15px;
         }
@@ -269,22 +270,22 @@
         }
 
         .views-growth {
-    display: inline-flex; /* use flex for centering */
-    align-items: center;  /* vertical centering */
-    justify-content: center; /* horizontal centering */
-    background-color: #2d2d2d;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 13px;
-    color: #aaa;
-    margin-bottom: 8px;
-    margin-left: 5px;
-}
+           display: inline-flex; /* use flex for centering */
+           align-items: center;  /* vertical centering */
+           justify-content: center; /* horizontal centering */
+           background-color: #2d2d2d;
+           padding: 2px 5px;
+           border-radius: 5px;
+           font-size: 10px;
+           color: #aaa;
+           margin-bottom: 8px;
+           margin-left: 2px;
+        }
 
 
         .views-label {
             color: #aaa;
-            font-size: 14px;
+            font-size: 10px;
         }
 
         .engagement-stats {
@@ -300,8 +301,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
         .stat-item:not(:last-child)::after {
@@ -315,16 +316,16 @@
         }
 
         .stat-icon {
-            width: 24px;
-            height: 24px;
-            margin: 0 auto 8px;
+            width: 20px;
+            height: 20px;
+            margin-bottom: 3px;
             opacity: 0.7;
         }
 
         .stat-number {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .stat-label {
@@ -344,8 +345,8 @@
         }
 
         .trophy-icon {
-    width: 52px;
-    height: 52px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -361,8 +362,8 @@
 }
 
 .share-icon {
-    width: 42px;
-    height: 42px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -412,42 +413,44 @@
 
 
         .achievement-text {
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 400;
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
 
         .audience-section {
-            margin-bottom: 32px;
+            margin-bottom: 5px;
         }
 
         .age-stats {
-            margin-bottom: 24px;
+            margin-bottom: 5px;
         }
 
         .age-group {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 0px;
         }
 
         .age-label {
-            font-size: 14px;
+            font-size: 8px;
             color: #fff;
         }
 
         .age-percentage {
-            font-size: 14px;
+            font-size: 8px;
             font-weight: 600;
+            margin-right: 47%;
         }
 
         .progress-bar {
-            width: 100%;
+            width: 53%;
             height: 4px;
             background-color: #2d2d2d;
             border-radius: 2px;
@@ -480,8 +483,9 @@
 
 .parents-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100px;
   margin-right: 20px;
 }
 
@@ -510,8 +514,8 @@
         }
 
         .remix-thumbnail {
-            width: 120px;
-            height: 174px;
+            width: 80px;
+            height: 144px;
             border-radius: 15px;
             position: relative;
             flex-shrink: 0;
@@ -519,9 +523,9 @@
 
         .remix-views {
     position: absolute;
-    bottom: 6px;
-    left: 8px;
-    font-size: 13px;
+    bottom: 3px;
+    left: 4px;
+    font-size: 10px;
     font-weight: 600;
     color: #fff;
 }
@@ -599,7 +603,7 @@
             right: 6px;
             width: 8px;
             height: 8px;
-            background-color: #ff4444;
+            background-color: #ff0000;
             border-radius: 50%;
             margin-right: 30px;
         }
@@ -654,12 +658,14 @@
     .slot-counter {
      display: flex;
     overflow: hidden;
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 4px;
     line-height: 1em;
     /*Change when its NEEDED 170px = 1-10million*/
-    width: 170px;
+    width: 100px;
+    transform: scaleY(1.2);
+    color: white;
 }
 
 .digit-wrapper {
@@ -691,12 +697,12 @@
 /**/
 
 .achievements-container {
-    margin-bottom: 5px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
     width: 100%;
+    height: 75px;
     display: block;
 }
 
@@ -716,15 +722,42 @@
     background: rgba(14, 13, 13, 0.2);
     border-radius: 12px;
     border: rgb(43, 43, 43) 1px solid;
-    padding: 16px;
+    padding: 10px;
     display: flex;
     align-items: center;
     gap: 12px;
-    min-width: 530px;
+    min-width: 285px;
     flex-shrink: 0;
     scroll-snap-align: start;
 }
 
+.section-1,
+.section-2,
+.section-3{
+   width: 540px;
+   height: 150px;
+}
+
+
+
+.audience-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.audience-slider {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 98.75%; /* 3 sections */
+}
+
+.audience-slide {
+  width: 100%;
+  flex-shrink: 0;
+  padding-right: 12px;
+}
 
     </style>
 </head>
@@ -763,7 +796,7 @@
             <div class="status-left">
                 <span>10:06 PM</span>
             </div>
-            <div class="status-right" style="color: white; font-size: 12px;">
+            <div class="status-right" style="color: white; font-size: 10px;">
                 <span><i class="fas fa-volume-mute"></i></span>
                 <span id="speed">0.00 K/S</span>
                 <span><i class="fas fa-wifi"></i></span>
@@ -810,12 +843,12 @@
                     <div class="views-section">
                         <div class="views-timeline">
                             <div id="slot-counter" class="slot-counter"></div>
-                            <span class="views-growth"><span id="lastViews" style="font-size: 15px; color: white; font-weight: 500; margin-right: 3px;"></span> Last 48 hours</span>
+                            <span class="views-growth"><span id="lastViews" style="font-size: 10px; color: white; font-weight: 500; "></span> Last 48 hours</span>
                         </div>
                         <div class="views-label">Views</div>
                     </div>
                     <div class="parents-container">
-                        <svg class="mini-chart" viewBox="0 0 120 40">
+                        <svg class="mini-chart" viewBox="0 0 160 40">
                             <path class="chart-line" 
                                   d="M5,30 
                                      L25,28 
@@ -847,7 +880,7 @@
                         <div class="stat-label">Comments</div>
                     </div>
                     <div class="stat-item">
-                        <span style="position:absolute; left: 39%; font-size: 13px; font-weight: bold;">+</span>
+                        <span style="position:absolute; left: 0%; top: 0%; font-size: 12px; font-weight: bold;">+</span>
                         <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                             <!-- Plus Sign Above Left Shoulder -->
                     
@@ -914,43 +947,115 @@
                       </div>
                     </div>
                   </div>
-                  
-    
-                <div class="audience-section">
+
+                  <!------------------------------------------------------------->
+
+                  <div class="audience-section">
                     <h2 class="section-title">Audience</h2>
-                    <h3 style="font-size: 16px; margin-bottom: 16px; color: #aaa;">Top ages</h3>
-                    
-                    <div class="age-stats">
-                        <div class="age-group">
-                            <span class="age-label">18-24 years</span>
-                            <span class="age-percentage">26%</span>
+                    <div class="audience-slider-wrapper" id="audienceWrapper">
+                      <div class="audience-slider" id="audienceSlider">
+                        <div class="audience-slide section-1">
+                            <div class="section-1">
+                                <h3 style="font-size: 13px; margin-bottom: 10px; color: #aaa;">Top ages</h3>
+                            
+                                <div class="age-stats">
+                                    <div class="age-group">
+                                        <span class="age-label">18-24 years</span>
+                                        <span class="age-percentage">26%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 26%"></div>
+                                    </div>
+                
+                                    <div class="age-group" style="margin-top: 16px;">
+                                        <span class="age-label">25-34 years</span>
+                                        <span class="age-percentage">31%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 31%"></div>
+                                    </div>
+                
+                                    <div class="age-group" style="margin-top: 16px;">
+                                        <span class="age-label">35-44 years</span>
+                                        <span class="age-percentage">22%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 22%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 26%"></div>
+                        <div class="audience-slide section-2">
+                            <div class="section-2">
+                                <h3 style="font-size: 13px; margin-bottom: 10px; color: #aaa;">Genders</h3>
+                            
+                                <div class="age-stats">
+                                    <div class="age-group">
+                                        <span class="age-label">Male</span>
+                                        <span class="age-percentage">66%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 66%"></div>
+                                    </div>
+                
+                                    <div class="age-group" style="margin-top: 16px;">
+                                        <span class="age-label">Female</span>
+                                        <span class="age-percentage">36%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 36%"></div>
+                                    </div>
+                
+                                    <div class="age-group" style="margin-top: 16px;">
+                                        <span class="age-label">User-specified</span>
+                                        <span class="age-percentage">0%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-    
-                        <div class="age-group" style="margin-top: 16px;">
-                            <span class="age-label">25-34 years</span>
-                            <span class="age-percentage">31%</span>
+                        <div class="audience-slide section-3">
+                            <div class="section-3">
+                                <h3 style="font-size: 13px; margin-bottom: 10px; color: #aaa;">Top locations</h3>
+                            
+                                <div class="age-stats">
+                                    <div class="age-group">
+                                        <span class="age-label">Indonesia</span>
+                                        <span class="age-percentage">58%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 26%"></div>
+                                    </div>
+                
+                                    <div class="age-group" style="margin-top: 16px;">
+                                        <span class="age-label">Philippines</span>
+                                        <span class="age-percentage">39%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 39%"></div>
+                                    </div>
+                
+                                    <div class="age-group" style="margin-top: 16px;">
+                                        <span class="age-label">United States</span>
+                                        <span class="age-percentage">17%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 22%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 31%"></div>
-                        </div>
-    
-                        <div class="age-group" style="margin-top: 16px;">
-                            <span class="age-label">35-44 years</span>
-                            <span class="age-percentage">22%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 22%"></div>
-                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
+                  
     
                 <div class="remixes-section">
                     <h2 class="section-title">Remixes</h2>
                     <div style="font-size: 17px; font-weight: 700; margin-bottom: 4px;">9</div>
-                    <div style="color: #aaa; font-size: 14px; margin-bottom: 16px;">Shorts using this video</div>
+                    <div style="color: #aaa; font-size: 12px; margin-bottom: 12px;">Shorts using this video</div>
                     <div class="remixes-grid">
                         <div class="remix-thumbnail">
                             <video src="Youtube Pics/Top 5 Grow a garden moments 😂.mp4"></video>
@@ -1072,6 +1177,74 @@ hideFullscreenBtn.addEventListener('click', () => {
             const difference = finalViews - startingViews;
     lastViews.textContent = '+' + difference.toLocaleString();
         }
+
+const slider = document.getElementById('audienceSlider');
+let isDown = false;
+let startX, scrollStart, currentX, slideIndex = 0;
+
+const totalSlides = 3;
+const wrapper = document.getElementById('audienceWrapper');
+const wrapperWidth = wrapper.offsetWidth;
+
+wrapper.addEventListener('mousedown', e => {
+  isDown = true;
+  startX = e.pageX;
+  scrollStart = slider.style.transform
+    ? parseFloat(slider.style.transform.replace('translateX(', '').replace('%)', '')) * wrapperWidth / -100
+    : 0;
+  slider.style.transition = 'none';
+});
+
+wrapper.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  currentX = e.pageX;
+  const moveX = currentX - startX;
+  slider.style.transform = `translateX(${(-slideIndex * 100) + (moveX / wrapperWidth) * 100}%)`;
+});
+
+wrapper.addEventListener('mouseup', e => {
+  if (!isDown) return;
+  isDown = false;
+  const moved = e.pageX - startX;
+
+  if (moved < -50 && slideIndex < totalSlides - 1) {
+    slideIndex++;
+  } else if (moved > 50 && slideIndex > 0) {
+    slideIndex--;
+  }
+
+  slider.style.transition = 'transform 0.3s ease';
+  slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+});
+
+wrapper.addEventListener('mouseleave', () => {
+  if (isDown) wrapper.dispatchEvent(new MouseEvent('mouseup'));
+});
+
+wrapper.addEventListener('touchstart', e => {
+  isDown = true;
+  startX = e.touches[0].clientX;
+  slider.style.transition = 'none';
+}, { passive: true });
+
+wrapper.addEventListener('touchmove', e => {
+  if (!isDown) return;
+  const moveX = e.touches[0].clientX - startX;
+  slider.style.transform = `translateX(${(-slideIndex * 100) + (moveX / wrapperWidth) * 100}%)`;
+}, { passive: true });
+
+wrapper.addEventListener('touchend', e => {
+  isDown = false;
+  const moved = e.changedTouches[0].clientX - startX;
+  if (moved < -50 && slideIndex < totalSlides - 1) {
+    slideIndex++;
+  } else if (moved > 50 && slideIndex > 0) {
+    slideIndex--;
+  }
+  slider.style.transition = 'transform 0.3s ease';
+  slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+});
+
 
         // Touch event handlers
         function handleTouchStart(e) {
