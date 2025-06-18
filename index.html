@@ -730,6 +730,35 @@
 </head>
 <body>
 
+<!-- Fullscreen Button -->
+<button id="fullscreenBtn" style="
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  padding: 8px 12px;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+">Fullscreen</button>
+
+<!-- Hide Fullscreen Button -->
+<button id="hideFullscreenBtn" style="
+  position: fixed;
+  top: 60px;
+  right: 12px;
+  z-index: 9999;
+  padding: 6px 10px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+">Hide Button</button>
+
+
         <div class="status-bar">
             <div class="status-left">
                 <span>10:06 PM</span>
@@ -1004,6 +1033,39 @@
         let finalViews = 16289518;
 
         getLastViews();
+
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+const hideFullscreenBtn = document.getElementById('hideFullscreenBtn');
+
+fullscreenBtn.addEventListener('click', () => {
+    const docEl = document.documentElement;
+
+    if (docEl.requestFullscreen) {
+        docEl.requestFullscreen();
+    } else if (docEl.webkitRequestFullscreen) {
+        docEl.webkitRequestFullscreen();
+    } else if (docEl.msRequestFullscreen) {
+        docEl.msRequestFullscreen();
+    }
+});
+
+// Automatically hide fullscreen button when in fullscreen mode
+document.addEventListener('fullscreenchange', () => {
+    fullscreenBtn.style.display = document.fullscreenElement ? 'none' : 'block';
+});
+
+document.addEventListener('webkitfullscreenchange', () => {
+    fullscreenBtn.style.display = document.webkitFullscreenElement ? 'none' : 'block';
+});
+
+// Hide both buttons manually
+hideFullscreenBtn.addEventListener('click', () => {
+    fullscreenBtn.style.display = 'none';
+    hideFullscreenBtn.style.display = 'none';
+});
+
+
+
 
         function getLastViews(){
             const lastViews = document.getElementById('lastViews');
