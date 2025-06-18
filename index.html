@@ -6,6 +6,8 @@
     <title>YouTube Shorts Analytics</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:900" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 
     <style>
         * {
@@ -143,6 +145,7 @@
 
         .video-section {
             padding: 7px;
+            padding-left: 15px;
         }
 
         .video-container {
@@ -153,8 +156,8 @@
         }
 
         .video-thumbnail {
-    width: 80px;
-    height: 100px;
+    width: 90px;
+    height: 120px;
     border-radius: 8px;
     background: rgb(0, 0, 0);
     position: relative;
@@ -219,7 +222,7 @@
         }
 
         .video-title {
-            font-size: 20px;
+            font-size: 23px;
             font-weight: 700;
             line-height: 1;
             margin-bottom: 8px;
@@ -278,7 +281,8 @@
            border-radius: 5px;
            font-size: 10px;
            color: #aaa;
-           margin-bottom: 8px;
+           margin-bottom: 4px;
+           margin-top: 4px;
            margin-left: 2px;
         }
 
@@ -292,7 +296,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 35px;
             position: relative;
         }
 
@@ -324,8 +329,9 @@
 
         .stat-number {
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 400;
             margin-bottom: 2px;
+            font-family: 'Roboto', sans-serif;
         }
 
         .stat-label {
@@ -655,18 +661,20 @@
 }
 
 
-    .slot-counter {
-     display: flex;
+.slot-counter {
+    display: flex;
     overflow: hidden;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 550;
     margin-bottom: 4px;
     line-height: 1em;
-    /*Change when its NEEDED 170px = 1-10million*/
-    width: 100px;
-    transform: scaleY(1.2);
+    width: 115px;
+    transform: scaleY(1.1);
+    transform: scaleX(1.0);
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 .digit-wrapper {
   position: relative;
@@ -726,7 +734,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    min-width: 285px;
+    min-width: 315px;
     flex-shrink: 0;
     scroll-snap-align: start;
 }
@@ -757,6 +765,10 @@
   width: 100%;
   flex-shrink: 0;
   padding-right: 12px;
+}
+
+path {
+    color: white;
 }
 
     </style>
@@ -791,7 +803,7 @@
   font-size: 12px;
 ">Hide Button</button>
 
-
+        <!---->
         <div class="status-bar">
             <div class="status-left">
                 <span>10:06 PM</span>
@@ -831,7 +843,7 @@
             <div class="video-section">
                 <div class="video-container">
                     <div class="video-thumbnail">
-                        <video src="Youtube Pics/Top 5 Grow a garden moments 😂.mp4" controls></video>
+                        <video src="./Youtube Pics/Top 5 Grow a garden moments 😂.mp4" controls></video>
                     </div>
                     <div class="video-info">
                         <h1 class="video-title">Top 5 Grow a garden <br>moments 😂</h1>
@@ -843,7 +855,7 @@
                     <div class="views-section">
                         <div class="views-timeline">
                             <div id="slot-counter" class="slot-counter"></div>
-                            <span class="views-growth"><span id="lastViews" style="font-size: 10px; color: white; font-weight: 500; "></span> Last 48 hours</span>
+                            <span class="views-growth"><span id="lastViews" style="font-size: 10px; color: white; font-weight: 500;  margin-right: 2px;"></span> Last 48 hours</span>
                         </div>
                         <div class="views-label">Views</div>
                     </div>
