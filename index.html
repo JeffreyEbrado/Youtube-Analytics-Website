@@ -817,8 +817,9 @@ path {
         <!---->
         <div class="status-bar">
             <div class="status-left">
-                <span>10:06 PM</span>
+                <span id="ph-time">--:-- --</span>
             </div>
+            
             <div class="status-right" style="color: white; font-size: 10px;">
                 <span><i class="fas fa-volume-mute"></i></span>
                 <span id="speed">0.00 K/S</span>
@@ -1193,6 +1194,24 @@ hideFullscreenBtn.addEventListener('click', () => {
     fullscreenBtn.style.display = 'none';
     hideFullscreenBtn.style.display = 'none';
 });
+
+
+function updatePhilippineTime() {
+    const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: 'Asia/Manila'
+    };
+    
+    const now = new Date().toLocaleTimeString('en-US', options);
+    document.getElementById('ph-time').textContent = now;
+}
+
+// Initial call
+updatePhilippineTime();
+// Update every second
+setInterval(updatePhilippineTime, 1000);
 
 
 
