@@ -17,14 +17,16 @@
         }
 
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000;
-            color: #ffffff;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
-        }
+        body, html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #000;
+    color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
 
         .pull-refresh-container {
             position: absolute;
@@ -53,6 +55,9 @@
             position: relative;
             min-height: 100vh;
         }
+
+
+
 
         .loading-overlay {
             position: fixed;
@@ -99,6 +104,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            margin-bottom: 10px;
         }
 
         .status-bar {
@@ -108,7 +114,7 @@
             right: 0;
             height: 28px;
             background-color: #000;
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             padding: 0 5px;
@@ -146,6 +152,7 @@
         .video-section {
             padding: 7px;
             padding-left: 15px;
+
         }
 
         .video-container {
@@ -425,7 +432,7 @@
         }
 
         .section-title {
-            font-size: 15px;
+            font-size: 19px;
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -453,7 +460,7 @@
         .age-percentage {
             font-size: 13px;
             font-weight: 600;
-            margin-right: 47%;
+            margin-right: 40%;
         }
 
         .progress-bar {
@@ -776,9 +783,9 @@ path {
 
 .plus-icon {
     color: rgb(223, 223, 223);
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1;
-    margin-bottom: 6.5px;
+    margin-bottom: 5px;
 }
 
 
@@ -871,6 +878,7 @@ path {
                         </div>
                         <div class="views-label">Views</div>
                     </div>
+                    <!--
                     <div class="parents-container">
                         <svg class="mini-chart" viewBox="0 0 160 40">
                             <path class="chart-line" 
@@ -882,6 +890,7 @@ path {
                                   stroke="blue" fill="none" stroke-width="2"/>
                           </svg>
                     </div>
+                    -->
                 </div>
                 <!----------------------->
     
@@ -980,7 +989,7 @@ path {
                       <div class="audience-slider" id="audienceSlider">
                         <div class="audience-slide section-1">
                             <div class="section-1">
-                                <h3 style="font-size: 15px; margin-bottom: 13px; color: #aaa;">Top ages</h3>
+                                <h3 style="font-size: 14px; margin-bottom: 13px; color: #aaa;">Top ages</h3>
                             
                                 <div class="age-stats">
                                     <div class="age-group">
@@ -1011,7 +1020,7 @@ path {
                         </div>
                         <div class="audience-slide section-2">
                             <div class="section-2">
-                                <h3 style="font-size: 15px; margin-bottom: 13px; color: #aaa;">Genders</h3>
+                                <h3 style="font-size: 14px; margin-bottom: 13px; color: #aaa;">Genders</h3>
                             
                                 <div class="age-stats">
                                     <div class="age-group">
@@ -1042,7 +1051,7 @@ path {
                         </div>
                         <div class="audience-slide section-3">
                             <div class="section-3">
-                                <h3 style="font-size: 15px; margin-bottom: 13px; color: #aaa;">Top locations</h3>
+                                <h3 style="font-size: 14px; margin-bottom: 13px; color: #aaa;">Top locations</h3>
                             
                                 <div class="age-stats">
                                     <div class="age-group">
@@ -1120,7 +1129,7 @@ path {
                 </svg>
                 <span>Home</span>
             </a>
-            <a href="#" class="nav-item">
+            <a href="#" class="nav-item" style="margin-top: 5px;">
                 <div class="shorts-icon">
                     <img src="Youtube Pics/Shorts-logo.png" alt="short-logo">
                 </div>
@@ -1132,11 +1141,10 @@ path {
             </a>
               
             <a href="#" class="nav-item">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/>
-                </svg>
+                <div class="shorts-icon" style="margin-top: 3px;">
+                    <img src="Youtube Pics/subscription logo.png" alt="subscription">
+                </div>
                 <span>Subscriptions</span>
-                <div class="notification-dot"></div>
             </a>
             <a href="#" class="nav-item active">
                 <div class="you-icon">
