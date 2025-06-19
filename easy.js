@@ -1,9 +1,13 @@
 
-let startingViews = 16108926;
-let finalViews = 16289518;
+let startingViews = 39010951;
+let finalViews = 39046770;
+
+const videoSource = './Youtube Pics/video.mp4';
+document.getElementById('myVideo').src = videoSource;
+
 
 const videoData = {
-    title: 'Top 5 Grow a garden <br>moments 😂',
+    title: 'POV: This song plays at the wrong time #brainrot',
     meta: '3 weeks ago • Public',
     views: {
       start: startingViews,
@@ -11,28 +15,28 @@ const videoData = {
       lastTimeLabel: ' Last 48 hours'
     },
     engagement: {
-      likes: '16.2M',
-      comments: '3.8K',
-      subscribers: '+12.1K',
-      shares: '2.9K'
+      likes: '39M',
+      comments: '98',
+      subscribers: '+17.3K',
+      shares: '1.6K'
     },
-    achievement: 'This is your most viewed Short. Wow!',
+    achievement: 'This Short is outperforming your usual content.',
     remixes: '2.9K',
     audience: {
       ages: {
-        '18-24Years': 26,
-        '25-34Years': 31,
-        '35-44Years': 22
+        '18-24Years': 48,
+        '25-34Years': 34,
+        '35-44Years': 21
       },
       genders: {
-        MaleStat: 66,
-        FemaleStat: 36,
-        UserSpecifiedStat: 0
+        MaleStat: 52,
+        FemaleStat: 64,
+        UserSpecifiedStat: 4
       },
       locations: {
-        IndonesiaStat: 58,
-        PhilippinesStat: 39,
-        UnitedStatesStat: 17
+        IndonesiaStat: 62,
+        PhilippinesStat: 49,
+        UnitedStatesStat: 12
       }
     }
   };
@@ -96,3 +100,7 @@ const videoData = {
   // Call the main update function
   updateAllStats(videoData);
   
+
+  document.querySelectorAll('.remix-video').forEach(video => {
+    video.src = videoSource;
+  });
