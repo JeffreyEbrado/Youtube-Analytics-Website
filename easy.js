@@ -31,7 +31,7 @@ const videoData = {
       genders: {
         MaleStat: 52,
         FemaleStat: 64,
-        UserSpecifiedStat: 4
+        UserSpecifiedStat: 0
       },
       locations: {
         IndonesiaStat: 62,
@@ -104,3 +104,59 @@ const videoData = {
   document.querySelectorAll('.remix-video').forEach(video => {
     video.src = videoSource;
   });
+
+
+  //----------------------------------------------------------------------
+
+let firstAge =  '66%';
+let secondAge =  '45%';
+let thirdAge = '34%';
+
+let maleStat = '69%';
+let femaleStat = '40%';
+let userSpecified = '2%';
+
+let location1 = 'Indonesia';
+let location2 = 'Philippines';
+let location3 = 'United States';
+
+let location1Fill = '78%';
+let location2Fill = '56%';
+let location3Fill = '33%';
+
+
+  // Clear age group text and progress bars
+document.getElementById('18-24Years').innerHTML = firstAge;
+document.getElementById('age1ProgressBar').style.width = firstAge; // used twice below!
+
+document.getElementById('25-34Years').innerHTML = secondAge;
+document.getElementById('age2ProgressBar').style.width = secondAge;
+
+document.getElementById('35-44Years').innerHTML = thirdAge;
+document.getElementById('age3ProgressBar').style.width = thirdAge; // Duplicated ID — use unique ones!
+
+// Clear gender stats
+document.getElementById('MaleStat').innerHTML = maleStat;
+document.getElementById('malePercentageFill').style.width = maleStat;
+
+document.getElementById('FemaleStat').innerHTML = femaleStat;
+document.getElementById('femalePercentageFill').style.width = femaleStat;
+
+document.getElementById('UserSpecifiedStat').innerHTML = userSpecified;
+document.getElementById('userSpecifiedPercentageFill').style.width = userSpecified;
+;
+
+// Clear location stats
+document.getElementById('location1').innerHTML = location1;
+document.getElementById('location1PercentageText').innerHTML = location1Fill; // ID reused 3 times!
+document.getElementById('location1Fill').style.width = location1Fill;
+
+document.getElementById('location2').innerHTML = location2;
+// location3PercentageText again
+document.getElementById('location2PercentageText').innerHTML = location2Fill;
+document.getElementById('location2Fill').style.width = location2Fill;
+
+document.getElementById('location3').innerHTML = location3;
+// location3PercentageText again
+document.getElementById('location3PercentageText').innerHTML = location3Fill;
+document.getElementById('location3Fill').style.width = location3Fill;

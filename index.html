@@ -457,12 +457,15 @@
         .age-label {
             font-size: 13px;
             color: #fff;
+            
+  white-space: nowrap;     /* Prevents line break */
+
         }
 
         .age-percentage {
             font-size: 13px;
             font-weight: 600;
-            margin-right: 40%;
+             margin-left:50%;
         }
 
         .progress-bar {
@@ -489,6 +492,8 @@
          transform: translateY(-300px); /* Start slightly above */
          animation: slideDown 0.2s ease-out forwards;
         }
+
+        
 
 @keyframes slideDown {
     to {
@@ -993,28 +998,31 @@ path {
                                 <h3 style="font-size: 14px; margin-bottom: 13px; color: #aaa;">Top ages</h3>
                             
                                 <div class="age-stats">
-                                    <div class="age-group">
+                                    <div class="age-group">              
+                                        <span class="age-label">18-24</span>
                                         <span class="age-percentage" id="18-24Years"></span>
                                         <div class="progress-fill" id="18-24YearsProgressBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" id="18-24YearsProgressBar" style="width: 26%"></div>
+                                        <div class="progress-fill" id="age1ProgressBar" style="width: 26%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-percentage" id="25-34Years"></span>
+                                        <span class="age-label">25-34</span>
+                                        <span class="age-percentage" style=" margin-left:44%;" id="25-34Years"></span>
                                         <div class="progress-fill" id="25-34YearsProgressBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 31%"></div>
+                                        <div class="progress-fill"  id="age2ProgressBar" style="width: 31%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-percentage" id="35-44Years"></span>
+                                        <span class="age-label">35-44</span>
+                                        <span class="age-percentage" style=" margin-left:31%;" id="35-44Years"></span>
                                         <div class="progress-fill" id="35-44YearsProgressBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 22%"></div>
+                                        <div class="progress-fill"  id="age3ProgressBar" style="width: 22%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -1025,27 +1033,30 @@ path {
                             
                                 <div class="age-stats">
                                     <div class="age-group">
-                                        <span class="age-percentage" id="MaleStat">66%</span>
+                                        <span class="age-label">Male</span>
+                                        <span class="age-percentage" style=" margin-left:51%;" id="MaleStat">66%</span>
                                         <div class="progress-fill" id="MaleBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 66%"></div>
+                                        <div class="progress-fill" id="malePercentageFill" style="width: 66%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-percentage" id="FemaleStat">36%</span>
+                                        <span class="age-label">Female</span>
+                                        <span class="age-percentage"  style=" margin-left:49%;" id="FemaleStat">36%</span>
                                         <div class="progress-fill" id="FemaleBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 36%"></div>
+                                        <div class="progress-fill" id="femalePercentageFill" style="width: 36%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-percentage" id="UserSpecifiedStat">0%</span>
+                                        <span class="age-label">User-specified</span>
+                                        <span class="age-percentage" style=" margin-left:2%;" id="UserSpecifiedStat">0%</span>
                                         <div class="progress-fill" id="UserSpecifiedBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 0%"></div>
+                                        <div class="progress-fill" id="userSpecifiedPercentageFill" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -1056,27 +1067,30 @@ path {
                             
                                 <div class="age-stats">
                                     <div class="age-group">
-                                        <span class="age-percentage" id="IndonesiaStat">58%</span>
-                                        <div class="progress-fill" id="IndonesiaBar"></div>
+                                        <span class="age-label" id="location1">Indonesia</span>
+                                        <span class="age-percentage"  style=" margin-left:6%;" id="location1PercentageText">58%</span>
+                                        <div class="progress-fill" id="progress-bar1"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 26%"></div>
+                                        <div class="progress-fill" id="location1Fill" style="width: 26%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-percentage" id="PhilippinesStat">39%</span>
-                                        <div class="progress-fill" id="PhilippinesBar"></div>
+                                        <span class="age-label" id="location2">Philippines</span>
+                                        <span class="age-percentage"  style=" margin-left:5%;"id="location2PercentageText">39%</span>
+                                        <div class="progress-fill" id="progress-bar1"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 39%"></div>
+                                        <div class="progress-fill" id="location2Fill" style="width: 39%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-percentage" id="UnitedStatesStat">17%</span>
-                                        <div class="progress-fill" id="UnitedStatesBar"></div>
+                                        <span class="age-label" id="location3">United States</span>
+                                        <span class="age-percentage"style=" margin-left:3%;" id="location3PercentageText">17%</span>
+                                        <div class="progress-fill" id="progress-bar1"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 22%"></div>
+                                        <div class="progress-fill" id="location3Fill" style="width: 0%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -1100,8 +1114,7 @@ path {
                         <div class="remix-thumbnail"><video class="remix-video" controls></video></div>
                         <div class="remix-thumbnail"><video class="remix-video" controls></video></div>
                         <div class="remix-thumbnail"><video class="remix-video" controls></video></div>
-                      </div>
-                      
+                    </div>      
                 </div>
             </div>
         </div>
