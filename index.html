@@ -239,7 +239,7 @@
 
         .video-meta {
             color: #aaa;
-            font-size: 10px;
+            font-size: 13px;
         }
 
         .stats-main {
@@ -866,8 +866,8 @@ path {
                         <video src="./Youtube Pics/Top 5 Grow a garden moments 😂.mp4" controls></video>
                     </div>
                     <div class="video-info">
-                        <h1 class="video-title">Top 5 Grow a garden <br>moments 😂</h1>
-                        <div class="video-meta">3 weeks ago • Public</div>
+                        <h1 id="video-title" class="video-title"></h1>
+                        <div id="video-meta" class="video-meta"></div>
                     </div>
                 </div>
     
@@ -875,7 +875,7 @@ path {
                     <div class="views-section">
                         <div class="views-timeline">
                             <div id="slot-counter" class="slot-counter"></div>
-                            <span class="views-growth"><span id="lastViews" style="font-size: 12px; color: white; font-weight: 500;  margin-right: 4px;"></span> Last 48 hours</span>
+                            <span class="views-growth"><span id="lastViews" style="font-size: 12px; color: white; font-weight: 500;  margin-right: 4px;"></span><span id="lastTimeViews"></span></span>
                         </div>
                         <div class="views-label">Views</div>
                     </div>
@@ -900,7 +900,7 @@ path {
                         <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                             <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke-linejoin="round"/>
                         </svg>
-                        <div class="stat-number">16.2M</div>
+                        <div class="stat-number" id="likesCount"></div>
                         <div class="stat-label">Likes</div>
                     </div>
                     
@@ -910,7 +910,7 @@ path {
                             <path d="M10 9h6" stroke-linecap="round"/>
                             <path d="M10 12h4" stroke-linecap="round"/>
                         </svg>
-                        <div class="stat-number">3.8K</div>
+                        <div class="stat-number" id="commentsCount">3.8K</div>
                         <div class="stat-label">Comments</div>
                     </div>
                     <div class="stat-item">
@@ -924,7 +924,7 @@ path {
                             <!-- Wider Body -->
                             <path d="M2 21h20v-2c0-4.42-4.48-8-10-8S2 14.58 2 19v2z" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <div class="stat-number">+12.1K</div>
+                        <div class="stat-number" id="subscribersCount"></div>
                         <div class="stat-label">Subscribers</div>
                     </div>
                     
@@ -933,7 +933,7 @@ path {
                         <div class="share-icon" >
                             <img src="Youtube Pics/share-logo.png" alt="share">
                         </div>
-                        <div class="stat-number">2.9K</div>
+                        <div class="stat-number" id="sharesCount"></div>
                         <div class="stat-label">Shares</div>
                     </div>
                     
@@ -945,7 +945,7 @@ path {
                         <div class="trophy-icon">
                           <img src="Youtube Pics/Trophy.jpg" alt="Trophy" />
                         </div>
-                        <div class="achievement-text">This is your most viewed Short. Wow!</div>
+                        <div class="achievement-text" id="achievement-text">This is your most viewed Short. Wow!</div>
                       </div>
                       <div class="achievement-banner">
                         <div class="trophy-icon">
@@ -994,24 +994,24 @@ path {
                             
                                 <div class="age-stats">
                                     <div class="age-group">
-                                        <span class="age-label">18-24 years</span>
-                                        <span class="age-percentage">26%</span>
+                                        <span class="age-percentage" id="18-24Years"></span>
+                                        <div class="progress-fill" id="18-24YearsProgressBar"></div>
                                     </div>
                                     <div class="progress-bar">
-                                        <div class="progress-fill" style="width: 26%"></div>
+                                        <div class="progress-fill" id="18-24YearsProgressBar" style="width: 26%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-label">25-34 years</span>
-                                        <span class="age-percentage">31%</span>
+                                        <span class="age-percentage" id="25-34Years"></span>
+                                        <div class="progress-fill" id="25-34YearsProgressBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 31%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-label">35-44 years</span>
-                                        <span class="age-percentage">22%</span>
+                                        <span class="age-percentage" id="35-44Years"></span>
+                                        <div class="progress-fill" id="35-44YearsProgressBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 22%"></div>
@@ -1025,24 +1025,24 @@ path {
                             
                                 <div class="age-stats">
                                     <div class="age-group">
-                                        <span class="age-label">Male</span>
-                                        <span class="age-percentage">66%</span>
+                                        <span class="age-percentage" id="MaleStat">66%</span>
+                                        <div class="progress-fill" id="MaleBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 66%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-label">Female</span>
-                                        <span class="age-percentage">36%</span>
+                                        <span class="age-percentage" id="FemaleStat">36%</span>
+                                        <div class="progress-fill" id="FemaleBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 36%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-label">User-specified</span>
-                                        <span class="age-percentage">0%</span>
+                                        <span class="age-percentage" id="UserSpecifiedStat">0%</span>
+                                        <div class="progress-fill" id="UserSpecifiedBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 0%"></div>
@@ -1056,24 +1056,24 @@ path {
                             
                                 <div class="age-stats">
                                     <div class="age-group">
-                                        <span class="age-label">Indonesia</span>
-                                        <span class="age-percentage">58%</span>
+                                        <span class="age-percentage" id="IndonesiaStat">58%</span>
+                                        <div class="progress-fill" id="IndonesiaBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 26%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-label">Philippines</span>
-                                        <span class="age-percentage">39%</span>
+                                        <span class="age-percentage" id="PhilippinesStat">39%</span>
+                                        <div class="progress-fill" id="PhilippinesBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 39%"></div>
                                     </div>
                 
                                     <div class="age-group" style="margin-top: 16px;">
-                                        <span class="age-label">United States</span>
-                                        <span class="age-percentage">17%</span>
+                                        <span class="age-percentage" id="UnitedStatesStat">17%</span>
+                                        <div class="progress-fill" id="UnitedStatesBar"></div>
                                     </div>
                                     <div class="progress-bar">
                                         <div class="progress-fill" style="width: 22%"></div>
@@ -1088,7 +1088,7 @@ path {
     
                 <div class="remixes-section">
                     <h2 class="section-title">Remixes</h2>
-                    <div style="font-size: 17px; font-weight: 700; margin-bottom: 4px;">9</div>
+                    <div style="font-size: 17px; font-weight: 700; margin-bottom: 4px;" id="remixesCount"></div>
                     <div style="color: #aaa; font-size: 12px; margin-bottom: 12px;">Shorts using this video</div>
                     <div class="remixes-grid">
                         <div class="remix-thumbnail">
@@ -1155,7 +1155,7 @@ path {
             </a>
         </div>
 
-
+    <script src="easy.js"></script>
     <script>
         let isDragging = false;
         let startY = 0;
@@ -1168,9 +1168,6 @@ path {
         const pullRefreshContainer = document.querySelector('.pull-refresh-container');
         const refreshIcon = document.querySelector('.refresh-icon');
         const loadingOverlay = document.querySelector('.loading-overlay');
-
-        let startingViews = 16108926;
-        let finalViews = 16289518;
 
         getLastViews();
 
@@ -1221,9 +1218,6 @@ function updatePhilippineTime() {
 updatePhilippineTime();
 // Update every second
 setInterval(updatePhilippineTime, 1000);
-
-
-
 
         function getLastViews(){
             const lastViews = document.getElementById('lastViews');
