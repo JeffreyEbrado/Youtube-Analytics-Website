@@ -24,7 +24,7 @@ const videoData = {
       shares: '1.2K'
     },
     achievement: 'More viewers are discovering this Short.',
-    remixes: '2.9K',
+    remixes: '3.4K',
     audience: {
       ages: {
         '18-24Years': 48,
