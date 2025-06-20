@@ -1,17 +1,17 @@
 
-let startingViews = 10601956;
-let finalViews = 10643461;
+let startingViews = 40417831;
+let finalViews = 404111026;
 
-let secondaryUp = 10645219;
+let secondaryUp = 404111759;
 
-let thirdUp =10646483;
+let thirdUp = 404112148;
 
 const videoSource = 'Youtube Pics/video.mp4';
 const partOfTheVideoPercent = 90;
 
 const videoData = {
-    title: 'this CUTSCENE fills me with DETERMINATION...',
-    meta: '4 weeks ago • Public',
+    title: 'Grogu and The Mandalorian Reunite',
+    meta: '3 years ago • Public',
     views: {
       start: startingViews,
       end: finalViews,
