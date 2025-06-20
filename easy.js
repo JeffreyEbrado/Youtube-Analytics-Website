@@ -27,9 +27,9 @@ const videoData = {
     remixes: '3.4K',
     audience: {
       ages: {
-        '18-24Years': 55,
-        '25-34Years': 66,
-        '35-44Years': 31
+        '18-24Years': 66,
+        '25-34Years': 45,
+        '35-44Years': 34
       },
       genders: {
         MaleStat: 66,
