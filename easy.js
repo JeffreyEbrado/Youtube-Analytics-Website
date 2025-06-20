@@ -2,6 +2,10 @@
 let startingViews = 39010951;
 let finalViews = 39046770;
 
+let secondaryUp = 39048473;
+
+let thirdUp =39049624;
+
 const videoSource = './Youtube Pics/video.mp4';
 document.getElementById('myVideo').src = videoSource;
 
@@ -40,72 +44,8 @@ const videoData = {
       }
     }
   };
-  
-  function updateAllStats(data) {
-    // Title & Meta
-    const titleEl = document.getElementById('video-title');
-    if (titleEl) titleEl.innerHTML = data.title;
-  
-    const metaEl = document.getElementById('video-meta');
-    if (metaEl) metaEl.innerHTML = data.meta;
-  
-    // Views
-    const lastTimeViews = document.getElementById('lastTimeViews');
-    if (lastTimeViews) lastTimeViews.innerHTML = data.views.lastTimeLabel;
-  
-    // Engagement
-    setHTML('likesCount', data.engagement.likes);
-    setHTML('commentsCount', data.engagement.comments);
-    setHTML('subscribersCount', data.engagement.subscribers);
-    setHTML('sharesCount', data.engagement.shares);
-  
-    // Achievement
-    const achText = document.getElementById('achievement-text');
-    if (achText) achText.textContent = data.achievement;
-  
-    // Audience - Ages
-    for (const id in data.audience.ages) {
-      updateAudienceStat(id, id + 'ProgressBar', data.audience.ages[id]);
-    }
-  
-    // Audience - Genders
-    for (const id in data.audience.genders) {
-      updateAudienceStat(id, id.replace('Stat', 'Bar'), data.audience.genders[id]);
-    }
-  
-    // Audience - Locations
-    for (const id in data.audience.locations) {
-      updateAudienceStat(id, id.replace('Stat', 'Bar'), data.audience.locations[id]);
-    }
-  
-    // Remixes
-    setHTML('remixesCount', data.remixes);
-  }
-  
-  // Utility to set text content safely
-  function setHTML(id, value) {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = value;
-  }
-  
-  // Audience stat updater with safety checks
-  function updateAudienceStat(textId, barId, value) {
-    const textEl = document.getElementById(textId);
-    const barEl = document.getElementById(barId);
-  
-    if (textEl) textEl.innerHTML = value + '%';
-    if (barEl) barEl.style.width = value + '%';
-  }
-  
-  // Call the main update function
-  updateAllStats(videoData);
-  
 
-  document.querySelectorAll('.remix-video').forEach(video => {
-    video.src = videoSource;
-  });
-
-
+  
   //----------------------------------------------------------------------
 
 let firstAge =  '66%';
@@ -160,3 +100,115 @@ document.getElementById('location3').innerHTML = location3;
 // location3PercentageText again
 document.getElementById('location3PercentageText').innerHTML = location3Fill;
 document.getElementById('location3Fill').style.width = location3Fill;
+
+
+//------------------------------------------------------------------------------------------------------------------------
+
+function updateAllStats(data) {
+  // Title & Meta
+  const titleEl = document.getElementById('video-title');
+  if (titleEl) titleEl.innerHTML = data.title;
+
+  const metaEl = document.getElementById('video-meta');
+  if (metaEl) metaEl.innerHTML = data.meta;
+
+  // Views
+  const lastTimeViews = document.getElementById('lastTimeViews');
+  if (lastTimeViews) lastTimeViews.innerHTML = data.views.lastTimeLabel;
+
+  // Engagement
+  setHTML('likesCount', data.engagement.likes);
+  setHTML('commentsCount', data.engagement.comments);
+  setHTML('subscribersCount', data.engagement.subscribers);
+  setHTML('sharesCount', data.engagement.shares);
+
+  // Achievement
+  const achText = document.getElementById('achievement-text');
+  if (achText) achText.textContent = data.achievement;
+
+  // Audience - Ages
+  for (const id in data.audience.ages) {
+    updateAudienceStat(id, id + 'ProgressBar', data.audience.ages[id]);
+  }
+
+  // Audience - Genders
+  for (const id in data.audience.genders) {
+    updateAudienceStat(id, id.replace('Stat', 'Bar'), data.audience.genders[id]);
+  }
+
+  // Audience - Locations
+  for (const id in data.audience.locations) {
+    updateAudienceStat(id, id.replace('Stat', 'Bar'), data.audience.locations[id]);
+  }
+
+  // Remixes
+  setHTML('remixesCount', data.remixes);
+}
+
+// Utility to set text content safely
+function setHTML(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = value;
+}
+
+// Audience stat updater with safety checks
+function updateAudienceStat(textId, barId, value) {
+  const textEl = document.getElementById(textId);
+  const barEl = document.getElementById(barId);
+
+  if (textEl) textEl.innerHTML = value + '%';
+  if (barEl) barEl.style.width = value + '%';
+}
+
+// Call the main update function
+updateAllStats(videoData);
+
+
+document.querySelectorAll('.remix-video').forEach(video => {
+  video.src = videoSource;
+});
+
+
+let counter = 0;
+const lastViews = document.getElementById('lastViews');
+
+
+function triggerRefresh() {
+  // Keep the pull state briefly
+  setTimeout(() => {
+    pullRefreshContainer.style.transform = 'translateX(-50%) translateY(-40px)';
+    refreshIcon.classList.add('spinning');
+  
+    setTimeout(() => {
+      contentWrapper.style.opacity = '0';
+      loadingOverlay.style.display = 'flex';
+  
+      setTimeout(async () => {
+        loadingOverlay.style.display = 'none';
+        contentWrapper.style.opacity = '1';
+
+        
+        if(counter === 0){
+           animateSlotCounter(startingViews, finalViews);
+           counter++;
+        } else if(counter === 1){
+           animateSlotCounter(finalViews, secondaryUp);
+          const difference = secondaryUp - startingViews;
+          lastViews.textContent = '+' + difference.toLocaleString();
+          counter++;
+        } else if(counter === 2){
+           animateSlotCounter(secondaryUp, thirdUp);
+          const difference =  thirdUp - startingViews;
+          lastViews.textContent = '+' + difference.toLocaleString();
+        }
+  
+        reAnimation();
+        resetPullToRefresh();
+      }, 1000);
+    }, 300);
+  }, 200);
+  
+
+}
+
+

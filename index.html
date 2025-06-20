@@ -1408,36 +1408,6 @@ reAnimation();
 
 
 
-        function triggerRefresh() {
-            // Keep the pull state briefly
-            setTimeout(() => {
-                pullRefreshContainer.style.transform = 'translateX(-50%) translateY(-40px)';
-                // Start spinning the refresh icon
-                refreshIcon.classList.add('spinning');
-                
-                // After a short spin, show loading overlay
-                setTimeout(() => {
-                    // Hide content and show loading
-                    contentWrapper.style.opacity = '0';
-                    loadingOverlay.style.display = 'flex';
-                    
-                    // Simulate loading for 1 second
-                    setTimeout(() => {
-                        // Hide loading and show content
-                        loadingOverlay.style.display = 'none';
-                        contentWrapper.style.opacity = '1';
-                        
-                        animateSlotCounter(startingViews, finalViews);
-                        reAnimation();
-                        
-                        // Reset pull to refresh
-                        resetPullToRefresh();
-                    }, 1000);
-                }, 300);
-            }, 200);
-
-        }
-
         function createDigitStrip(fromDigit, toDigit) {
   const strip = document.createElement('div');
   strip.className = 'digit-strip';
@@ -1476,51 +1446,59 @@ updateSpeed();
 setInterval(updateSpeed, 5000);
 
 function animateSlotCounter(fromNum, toNum) {
-  const container = document.getElementById('slot-counter');
-  container.innerHTML = '';
+  return new Promise(resolve => {
+    const container = document.getElementById('slot-counter');
+    container.innerHTML = '';
 
-  const fromStr = fromNum.toString().padStart(toNum.toString().length, '0');
-  const toStr = toNum.toString().padStart(fromStr.length, '0');
+    const fromStr = fromNum.toString().padStart(toNum.toString().length, '0');
+    const toStr = toNum.toString().padStart(fromStr.length, '0');
 
-  const totalDigits = toStr.length;
-  let digitIndex = 0;
+    const totalDigits = toStr.length;
+    let digitIndex = 0;
+    let animationsFinished = 0;
 
-  for (let i = 0; i < totalDigits; i++) {
-    // Insert comma BEFORE this digit if it's in a group of thousands
-    const isCommaPosition = (totalDigits - i) % 3 === 0 && i !== 0;
+    for (let i = 0; i < totalDigits; i++) {
+      const isCommaPosition = (totalDigits - i) % 3 === 0 && i !== 0;
 
-    if (isCommaPosition) {
-      const commaSpan = document.createElement('div');
-      commaSpan.className = 'digit-wrapper';
-      commaSpan.innerHTML = `<span>,</span>`;
-      container.appendChild(commaSpan);
+      if (isCommaPosition) {
+        const commaSpan = document.createElement('div');
+        commaSpan.className = 'digit-wrapper';
+        commaSpan.innerHTML = `<span>,</span>`;
+        container.appendChild(commaSpan);
+      }
+
+      const fromDigit = parseInt(fromStr[i]);
+      const toDigit = parseInt(toStr[i]);
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'digit-wrapper';
+
+      const strip = createDigitStrip(fromDigit, toDigit);
+      wrapper.appendChild(strip);
+      container.appendChild(wrapper);
+
+      const localIndex = digitIndex;
+
+      setTimeout(() => {
+        const height = wrapper.clientHeight;
+        const digitCount = strip.children.length;
+        strip.style.transform = `translateY(-${(digitCount - 1) * height}px)`;
+
+        // Resolve when the last digit finishes animating
+        animationsFinished++;
+        if (animationsFinished === totalDigits) {
+          setTimeout(resolve, 500); // give a short delay to let animation finish
+        }
+      }, localIndex * 100);
+
+      digitIndex++;
     }
-
-    const fromDigit = parseInt(fromStr[i]);
-    const toDigit = parseInt(toStr[i]);
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'digit-wrapper';
-
-    const strip = createDigitStrip(fromDigit, toDigit);
-    wrapper.appendChild(strip);
-    container.appendChild(wrapper);
-
-    setTimeout(() => {
-      const height = wrapper.clientHeight;
-      const digitCount = strip.children.length;
-      strip.style.transform = `translateY(-${(digitCount - 1) * height}px)`;
-    }, digitIndex * 100); // stagger only number digits
-
-    digitIndex++;
-  }
+  });
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
   animateSlotCounter(startingViews, finalViews);
-
- 
 });
 
         function resetPullToRefresh() {
