@@ -19,7 +19,7 @@ const videoData = {
       lastTimeLabel: ' Last 48 hours'
     },
     engagement: {
-      likes: '39M',
+      likes: '224K',
       comments: '98',
       subscribers: '+17.3K',
       shares: '1.6K'
