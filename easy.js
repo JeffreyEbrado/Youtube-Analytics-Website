@@ -1,30 +1,29 @@
 
-let startingViews = 39010951;
-let finalViews = 39046770;
+let startingViews = 10601956;
+let finalViews = 10643461;
 
-let secondaryUp = 39048473;
+let secondaryUp = 10645219;
 
-let thirdUp =39049624;
+let thirdUp =10646483;
 
-const videoSource = './Youtube Pics/video.mp4';
-document.getElementById('myVideo').src = videoSource;
-
+const videoSource = 'Youtube Pics/video.mp4';
+const partOfTheVideoPercent = 90;
 
 const videoData = {
-    title: 'POV: This song plays at the wrong time #brainrot',
-    meta: '3 weeks ago • Public',
+    title: 'this CUTSCENE fills me with DETERMINATION...',
+    meta: '4 weeks ago • Public',
     views: {
       start: startingViews,
       end: finalViews,
       lastTimeLabel: ' Last 48 hours'
     },
     engagement: {
-      likes: '224K',
-      comments: '98',
-      subscribers: '+17.3K',
-      shares: '1.6K'
+      likes: '234k',
+      comments: '7.6K',
+      subscribers: '+9.3K',
+      shares: '1.2K'
     },
-    achievement: 'This Short is outperforming your usual content.',
+    achievement: 'More viewers are discovering this Short.',
     remixes: '2.9K',
     audience: {
       ages: {
@@ -103,6 +102,27 @@ document.getElementById('location3Fill').style.width = location3Fill;
 
 
 //------------------------------------------------------------------------------------------------------------------------
+
+document.getElementById('myVideo').src = videoSource;
+
+const video = document.getElementById('myVideo');
+const percent = partOfTheVideoPercent; // for example
+
+video.onloadedmetadata = function () {
+
+  video.currentTime = (percent / 100) * video.duration;
+};
+
+const videos = document.querySelectorAll('.remix-video');
+
+videos.forEach(video => {
+  video.onloadedmetadata = function () {
+    video.currentTime = (percent / 100) * video.duration;
+  };
+
+  video.src = 'Youtube Pics/video.mp4'; // Set the source here
+});
+
 
 function updateAllStats(data) {
   // Title & Meta
