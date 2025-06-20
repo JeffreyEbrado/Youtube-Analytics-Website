@@ -1,16 +1,16 @@
 
-let startingViews = 82695182;
-let finalViews = 82698053;
+let startingViews = 55159127;
+let finalViews = 55202108;
 
-let secondaryUp = 82699254;
+let secondaryUp = 55206682;
 
-let thirdUp = 82699254;
+let thirdUp = 55207435;
 
 const videoSource = 'Youtube Pics/video.mp4';
 const partOfTheVideoPercent = 90;
 
 const videoData = {
-    title: 'Tung Tung Tung Sahur Does the Sulu Trend',
+    title: 'Tung Tung Tung Sahur and Ballerina Cappuccina BTS',
     meta: '2 months ago • Public',
     views: {
       start: startingViews,
@@ -18,13 +18,13 @@ const videoData = {
       lastTimeLabel: ' Last 48 hours'
     },
     engagement: {
-      likes: '776K',
-      comments: '12.9K',
-      subscribers: '+22.3K',
-      shares: '11.2K'
+      likes: '436K',
+      comments: '5.4K',
+      subscribers: '+9.7K',
+      shares: '10.4K'
     },
-    achievement: 'This Short is your most viewed short, Wow!',
-    remixes: '3.4K',
+    achievement: 'Wow! Your Short is blowing up',
+    remixes: '2.4K',
     audience: {
       ages: {
         '18-24Years': 66,
@@ -46,8 +46,7 @@ const videoData = {
 
   
   //----------------------------------------------------------------------
-
-let firstAge =  '66%';
+  let firstAge =  '66%';
 let secondAge =  '45%';
 let thirdAge = '34%';
 
@@ -68,7 +67,7 @@ let location3Fill = '33%';
 document.getElementById('18-24Years').innerHTML = firstAge;
 document.getElementById('age1ProgressBar').style.width = firstAge; // used twice below!
 
-document.getElementById('25-34Years').innerHTML = secondAge;
+document.getElementById('25-34Years').textContent = secondAge;
 document.getElementById('age2ProgressBar').style.width = secondAge;
 
 document.getElementById('35-44Years').innerHTML = thirdAge;
