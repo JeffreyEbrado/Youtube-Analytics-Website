@@ -1,45 +1,45 @@
 
-let startingViews = 40417831;
-let finalViews = 404111026;
+let startingViews = 82695182;
+let finalViews = 82698053;
 
-let secondaryUp = 404111759;
+let secondaryUp = 82699254;
 
-let thirdUp = 404112148;
+let thirdUp = 82699254;
 
 const videoSource = 'Youtube Pics/video.mp4';
 const partOfTheVideoPercent = 90;
 
 const videoData = {
-    title: 'Grogu and The Mandalorian Reunite',
-    meta: '3 years ago • Public',
+    title: 'Tung Tung Tung Sahur Does the Sulu Trend',
+    meta: '2 months ago • Public',
     views: {
       start: startingViews,
       end: finalViews,
       lastTimeLabel: ' Last 48 hours'
     },
     engagement: {
-      likes: '234K',
-      comments: '7.6K',
-      subscribers: '+9.3K',
-      shares: '1.2K'
+      likes: '776K',
+      comments: '12.9K',
+      subscribers: '+22.3K',
+      shares: '11.2K'
     },
-    achievement: 'More viewers are discovering this Short.',
+    achievement: 'This Short is your most viewed short, Wow!',
     remixes: '3.4K',
     audience: {
       ages: {
-        '18-24Years': 48,
-        '25-34Years': 34,
-        '35-44Years': 21
+        '18-24Years': 55,
+        '25-34Years': 66,
+        '35-44Years': 31
       },
       genders: {
-        MaleStat: 52,
-        FemaleStat: 64,
-        UserSpecifiedStat: 0
+        MaleStat: 66,
+        FemaleStat: 43,
+        UserSpecifiedStat: 2
       },
       locations: {
-        IndonesiaStat: 62,
-        PhilippinesStat: 49,
-        UnitedStatesStat: 12
+        IndonesiaStat: 78,
+        PhilippinesStat: 53,
+        UnitedStatesStat: 34
       }
     }
   };
@@ -56,7 +56,7 @@ let femaleStat = '40%';
 let userSpecified = '2%';
 
 let location1 = 'Indonesia';
-let location2 = 'Philippines';
+let location2 = 'Brazil';
 let location3 = 'United States';
 
 let location1Fill = '78%';
